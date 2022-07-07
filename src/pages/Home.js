@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import AddBookForm from './AddBookForm';
-import Book from './Book';
+import AddBookForm from '../components/AddBookForm';
+import Book from '../components/Book';
 
 const books = [{
-  id: 2,
+  id: 'hjjhyg',
   title: 'the lost treasure',
   author: 'john',
   category: 'adventure',

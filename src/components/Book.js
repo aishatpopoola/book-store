@@ -1,23 +1,29 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+// import { useDispatch } from 'react-redux';
 
-const Book = ({ book }) => (
-  <div className="book-list">
-    <h2>A single book</h2>
-    <div className="book-info">
-      {book.id}
-      {book.title}
-      <button type="button">Remove book</button>
+const Book = ({ book }) => {
+  const removeBookFromStore = () => {
+    console.log('hi there');
+  };
+  return (
+    <div className="book-list">
+      <h2>A single book</h2>
+      <div className="book-info">
+        {book.id}
+        {book.title}
+        <button type="button" onClick={removeBookFromStore}>Remove book</button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Book.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string,
     author: PropTypes.string,
     category: PropTypes.string,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
 };
 
