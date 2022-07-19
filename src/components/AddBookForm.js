@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import dynamicId from '../utils/dynamicId';
-// import { addBook } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 
 const categoryArray = ['Adventure', 'Romance', 'Action'];
 
 const AddBookForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [newBook, setNewBook] = useState({ id: dynamicId(), title: '', author: '' });
   const submitBookToStore = () => {
-    // dispatch(addBook(newBook));
+    dispatch(addBook(newBook));
   };
 
-  console.log('AddBookForm');
   return (
     <form>
       <div>

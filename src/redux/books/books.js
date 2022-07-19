@@ -2,23 +2,31 @@ export const redux = ('redux');
 
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_ALL_BOOKS = 'ADD_ALL_BOOKS';
 
 const initialState = [];
 
-export const addBook = (qty = 1) => ({
-  type: ADD_BOOK,
-  // payload- any aditonal info you want to send
-  payload: qty,
+export const addAllBooks = (payload) => ({
+  type: ADD_ALL_BOOKS,
+  payload,
 });
 
-export const removeBook = (qty = 1) => ({
+export const addBook = (payload) => ({
+  type: ADD_BOOK,
+  payload,
+});
+
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   // payload- any aditonal info you want to send
-  payload: qty,
+  payload: id,
 });
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_ALL_BOOKS:
+      return action.payload;
+
     case ADD_BOOK:
       return [
         ...state,

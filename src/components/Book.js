@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = ({ book }) => {
+  const dispatch = useDispatch();
   const removeBookFromStore = () => {
-    console.log('hi there');
+    dispatch(removeBook(book.id));
   };
   return (
     <div className="book-list">
