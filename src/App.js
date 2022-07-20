@@ -8,7 +8,7 @@ import Categories from './pages/Category/Categories';
 import { addAllBooks } from './redux/books/books';
 
 const books = [{
-  id: 'hjjhyg',
+  id: 'frccb',
   title: 'a lost treasure',
   author: 'john',
   category: 'adventure',
